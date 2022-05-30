@@ -21,7 +21,7 @@ class CreateInscritosTable extends Migration
             $table->char('dni',8);
             $table->string('celular')->nullable();
             /**mas**/
-
+            $table->string('url_certificado')->nullable();
             $table->unsignedBigInteger('id_curso'); // cursos
             $table->foreign('id_curso')->references('id')->on('cursos');
             

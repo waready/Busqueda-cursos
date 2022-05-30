@@ -21,30 +21,51 @@
                                 </button>
                             </div>
                             @endif
-
-                            {!! Form::model($cursos, ['method' =>'PATCH','route'=>['cursos.update',$cursos->id]]) !!}
+                            {!! Form::model($inscritos, ['method' =>'PATCH','route'=>['inscritos.update',$inscritos->id],'files' => true]) !!}
                             <div class="row">
                                 <div class="col-xs-12 col-sm-12 col-md-12">
                                     <div class="form-group">
-                                        <label for="name">Nombre</label>
-                                        {!! Form::text('nombre',null, array('class' => 'form-control')) !!}
+                                        <label for="name">Nombres</label>
+                                        {!! Form::text('nombres',null, array('class' => 'form-control')) !!}
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-12 col-md-12">
+                                    <div class="form-group">
+                                        <label for="name">Apellidos</label>
+                                        {!! Form::text('apellidos',null, array('class' => 'form-control')) !!}
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-12 col-md-12">
+                                    <div class="form-group">
+                                        <label for="name">DNI</label>
+                                        {!! Form::text('dni',null, array('class' => 'form-control')) !!}
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-12 col-md-12">
+                                    <div class="form-group">
+                                        <label for="email">E-mail</label>
+                                        {!! Form::text('email',null, array('class' => 'form-control')) !!}
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-12 col-md-12">
+                                    <div class="form-group">
+                                        <label for="celular">Celular</label>
+                                        {!! Form::text('celular',null, array('class' => 'form-control')) !!}
                                     </div>
                                 </div>
 
                                 <div class="col-xs-12 col-sm-12 col-md-12">
                                     <div class="form-group">
-                                        <label for="email">Descripcion</label>
-                                        {!! Form::text('descripcion',null, array('class' => 'form-control')) !!}
+                                        <label for="roles">Roles</label>
+                                        {!! Form::select('roles[]', $roles,[], array('class' => 'form-control')) !!}
                                     </div>
                                 </div>
-                                
                                 <div class="col-xs-12 col-sm-12 col-md-12">
                                     <div class="form-group">
-                                        <label for="password">Estado</label>
-                                        {!! Form::text('estado',null, array('class' => 'form-control')) !!}
+                                        <label for="roles">PDF</label>
+                                        {!! Form::file('files',null, array('class' => 'form-control')) !!}
                                     </div>
                                 </div>
-
 
                                 {{-- <div class="col-xs-12 col-sm-12 col-md-12">
                                     <div class="form-group">

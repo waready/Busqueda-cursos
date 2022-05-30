@@ -14,6 +14,7 @@
                             {{-- @can('crear-cursos')
                                 <a href="{{ route('cursos.create') }}" class="btn btn-warning">Nuevo</a>
                             @endcan --}}
+                            <a href="{{ route('inscritos.create') }}" class="btn btn-warning">Nuevo</a>
 
                             <table class="table table-striped mt-2">
                                 <thead style="background-color: #6777ef;">
@@ -24,6 +25,7 @@
                                     <th style="color:#fff;">E-mail</th>
                                     <th style="color:#fff;">Celular</th>
                                     <th style="color:#fff;">Curso</th>
+                                    <th style="color:#fff;">Doc</th>
                                     <th style="color:#fff;">Acciones</th>
                                 </thead>
                                 <tbody>
@@ -44,13 +46,17 @@
                                              <td>
                                                 {{ $usuario->curso  }}
                                              </td>
+                                             <td>
+                                                <a class="editar-usuario" href="storage/{{ $usuario->url_certificado }}"> <i class="fas fa-file-alt big-icon text-primary" aria-hidden="true"></i></a> 
+                                             </td>
                                             <td>
-                                                <a class="btn btn-info" href="{{ route('cursos.edit',$usuario->id) }}">Editar</a>
+                                                <a class="btn btn-info" href="{{ route('inscritos.edit',$usuario->id) }}">Editar</a>
                                         
-                                                {!! Form::open(['method' => 'DELETE', 'route' => ['cursos.destroy',$usuario->id],'style' => 'display:inline']) !!}
+                                                {!! Form::open(['method' => 'DELETE', 'route' => ['inscritos.destroy',$usuario->id],'style' => 'display:inline']) !!}
                                                     {!! Form::submit('Borrar', ['class' => 'btn btn-danger']) !!}
                                                 {!! Form::close()  !!}
                                             </td>
+
                                         </tr>
                                     @endforeach
                                 </tbody>
